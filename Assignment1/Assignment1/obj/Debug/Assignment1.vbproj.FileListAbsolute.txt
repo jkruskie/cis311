@@ -1,0 +1,13 @@
+D:\repos\cs311\Assignment1\Assignment1\bin\Debug\Assignment1.exe.config
+D:\repos\cs311\Assignment1\Assignment1\bin\Debug\Assignment1.exe
+D:\repos\cs311\Assignment1\Assignment1\bin\Debug\Assignment1.pdb
+D:\repos\cs311\Assignment1\Assignment1\bin\Debug\Assignment1.xml
+D:\repos\cs311\Assignment1\Assignment1\obj\Debug\Assignment1.vbproj.AssemblyReference.cache
+D:\repos\cs311\Assignment1\Assignment1\obj\Debug\Assignment1.vbproj.SuggestedBindingRedirects.cache
+D:\repos\cs311\Assignment1\Assignment1\obj\Debug\Assignment1.Form1.resources
+D:\repos\cs311\Assignment1\Assignment1\obj\Debug\Assignment1.Resources.resources
+D:\repos\cs311\Assignment1\Assignment1\obj\Debug\Assignment1.vbproj.GenerateResource.cache
+D:\repos\cs311\Assignment1\Assignment1\obj\Debug\Assignment1.vbproj.CoreCompileInputs.cache
+D:\repos\cs311\Assignment1\Assignment1\obj\Debug\Assignment1.exe
+D:\repos\cs311\Assignment1\Assignment1\obj\Debug\Assignment1.xml
+D:\repos\cs311\Assignment1\Assignment1\obj\Debug\Assignment1.pdb
