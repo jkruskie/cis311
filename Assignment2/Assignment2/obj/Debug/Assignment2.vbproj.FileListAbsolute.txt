@@ -1,0 +1,16 @@
+D:\repos\cs311\Assignment2\Assignment2\bin\Debug\Assignment2.exe.config
+D:\repos\cs311\Assignment2\Assignment2\bin\Debug\Assignment2.exe
+D:\repos\cs311\Assignment2\Assignment2\bin\Debug\Assignment2.pdb
+D:\repos\cs311\Assignment2\Assignment2\bin\Debug\Assignment2.xml
+D:\repos\cs311\Assignment2\Assignment2\obj\Debug\Assignment2.vbproj.AssemblyReference.cache
+D:\repos\cs311\Assignment2\Assignment2\obj\Debug\Assignment2.vbproj.SuggestedBindingRedirects.cache
+D:\repos\cs311\Assignment2\Assignment2\obj\Debug\Assignment2.Resources.resources
+D:\repos\cs311\Assignment2\Assignment2\obj\Debug\Assignment2.vbproj.GenerateResource.cache
+D:\repos\cs311\Assignment2\Assignment2\obj\Debug\Assignment2.vbproj.CoreCompileInputs.cache
+D:\repos\cs311\Assignment2\Assignment2\obj\Debug\Assignment2.exe
+D:\repos\cs311\Assignment2\Assignment2\obj\Debug\Assignment2.xml
+D:\repos\cs311\Assignment2\Assignment2\obj\Debug\Assignment2.pdb
+D:\repos\cs311\Assignment2\Assignment2\obj\Debug\Assignment2.frmComputerConfig.resources
+D:\repos\cs311\Assignment2\Assignment2\bin\Debug\Newtonsoft.Json.dll
+D:\repos\cs311\Assignment2\Assignment2\bin\Debug\Newtonsoft.Json.xml
+D:\repos\cs311\Assignment2\Assignment2\obj\Debug\Assignment2.vbproj.CopyComplete

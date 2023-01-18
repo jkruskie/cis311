@@ -69,7 +69,7 @@ Public Class Form1
     Dim aInventory As udtInventoryItem()            ' Array of inventory items
     Dim blnEmptyInventory As Boolean = True         ' Whether or not the inventory is empty or not
     Dim blnSaveMode As Boolean = False              ' Whether or not the application is in save mode
-    Dim intCurrentItem As Integer = 1               ' The current item being viewed
+    Dim intCurrentItem As Integer = 0               ' The current item being viewed
     Dim blnDisplayBytes As Boolean = False          ' Whether or not the application is displaying bytes or GB
 
     '--- SUBPROGRAMS --- SUBPROGRAMS --- SUBPROGRAMS --- SUBPROGRAMS --- SUBPROGRAMS ---
@@ -121,7 +121,7 @@ Public Class Form1
             ' Print a console message
             Console.WriteLine("File does not exist, creating file...")
             ' If not, create the file
-            CreateInventoryFile()
+            ' CreateInventoryFile()
         End If
 
         ' Console log inventory status
@@ -182,22 +182,28 @@ Public Class Form1
         Try
             ' Read the file into a string array
             Dim strData() As String = File.ReadAllLines(gstrFILE_NAME)
+
             ' Get the number of lines in the file
             Dim intArraySize As Integer = strData.Length - 1
             ' Resize the array to the size of the file
             ReDim aInventory(intArraySize)
 
+            Console.WriteLine("Array size: " & intArraySize)
+
             ' If the file is not empty (has data)
-            ' minus the headers
             ' set blnEmptyInventory to false
-            If intArraySize > 0 Then
+            If intArraySize >= 0 Then
                 blnEmptyInventory = False
             End If
 
             ' Add the data to the array
-            For intLineCounter As Integer = 1 To intArraySize
+            For intLineCounter As Integer = 0 To intArraySize
+
                 ' Split the line into an array
                 Dim strLine() As String = strData(intLineCounter).Split(vbTab)
+
+                Console.WriteLine("ITEM " & strLine(0) & " " & strLine(1) & " " & strLine(2) & " " & strLine(3) & " " & strLine(4) & " " & strLine(5) & " " & strLine(6) & " " & strLine(7) & " " & strLine(8) & " " & strLine(9))
+
                 ' Add the data to the array
                 aInventory(intLineCounter).strManufacturer = strLine(0)     ' Manufacturer
                 aInventory(intLineCounter).strForm = strLine(1)             ' Form
@@ -264,7 +270,11 @@ Public Class Form1
         '------------------------------------------------------------
 
         ' Create the inventory file
-        File.Create(gstrFILE_NAME)
+        ' Dim file As FileStream = file.Create("./PalletQueue/Printer1" & ".txt")
+
+
+
+
 
         ' Add headers to file
         ' Dim strHeaders As String = "Manufacturer" & vbTab & "Form" & vbTab & "Processor" & vbTab & "MemoryGB" & vbTab & "MemoryBytes" & vbTab & "Video" & vbTab & "VideoMemoryGB" & vbTab & "VideoMemoryBytes" & vbTab & "StorageGB" & vbTab & "StorageBytes" & vbTab & "Wireless"
@@ -392,12 +402,17 @@ Public Class Form1
         ' Print a console message
         Console.WriteLine("Left button clicked!")
 
+        Console.WriteLine("SAVE MODE: " & blnSaveMode)
+
         If Not blnSaveMode Then
             ' Print a console message
             Console.WriteLine("Previous button clicked!")
 
-            ' If we're not at index 1, go to the previous item
-            If intCurrentItem > 1 Then
+            Console.WriteLine("CURRENT INDEX " & intCurrentItem)
+            Console.WriteLine("MAX INDEX " & aInventory.Length - 1)
+
+            ' If we're not at index 0, go to the previous item
+            If intCurrentItem > 0 Then
                 intCurrentItem -= 1
                 ' Display the current item
                 DisplayItem(intCurrentItem)
@@ -426,14 +441,20 @@ Public Class Form1
         ' Print a console message
         Console.WriteLine("Right button clicked!")
 
+        Console.WriteLine("SAVE MODE: " & blnSaveMode)
+
         If Not blnEmptyInventory Then
             If Not blnSaveMode Then
                 ' Print a console message
                 Console.WriteLine("Next button clicked!")
 
+                Console.WriteLine("CURRENT INDEX " & intCurrentItem)
+                Console.WriteLine("MAX INDEX " & aInventory.Length - 1)
+
                 ' If we're not at the last item, go to the next item
                 If intCurrentItem < aInventory.Length - 1 Then
                     intCurrentItem += 1
+                    Console.WriteLine("CURRENT INDEX " & intCurrentItem)
                     ' Display the current item
                     DisplayItem(intCurrentItem)
                 Else
@@ -472,14 +493,12 @@ Public Class Form1
         ' Print a console message
         Console.WriteLine("Middle button clicked!")
 
-        ' If blnemptyinventory isn't false, let the user
-        ' browse the inventory
-        If Not blnEmptyInventory Then
-            ' Set save mode to true
-            blnSaveMode = True
-            saveModeEnabled()
-            ChangeFormTitle()
-        End If
+        Console.WriteLine("SAVE MODE: " & blnSaveMode)
+
+        ' Switch to save mode
+        blnSaveMode = True
+        saveModeEnabled()
+        ChangeFormTitle()
     End Sub
 
     Private Sub DisableInputs()
@@ -557,6 +576,8 @@ Public Class Form1
         '- Local Variable Dictionary (alphabetically):              -
         '- (None)                                                   -
         '------------------------------------------------------------
+
+        Console.WriteLine("DISPLAYING ITEM INDEX " & intCurrentItemIndex)
 
         ' Display the current item in the inputs
         txtManufacturer.Text = aInventory(intCurrentItemIndex).strManufacturer
@@ -813,8 +834,13 @@ Public Class Form1
         ' Print a console message
         Console.WriteLine("Saving data!")
 
-        ' Redim +1 the array
-        ReDim Preserve aInventory(aInventory.Length)
+        ' If aInventory is not nothing
+        If aInventory IsNot Nothing Then
+            ' Redim +1 the array
+            ReDim Preserve aInventory(aInventory.Length)
+        Else
+            ReDim aInventory(0)
+        End If
 
         ' Assign the new inventory item to the last index
         aInventory(aInventory.Length - 1).strManufacturer = txtManufacturer.Text
@@ -844,8 +870,11 @@ Public Class Form1
             aInventory(aInventory.Length - 1).sngStorageGB = txtHdd.Text
         End If
 
+        ' Set the new current item to 0
         intCurrentItem = 0
-
+        ' Inventory isn't empty
+        blnEmptyInventory = False
+        ' Disable save mode and switch to viewing mode
         blnSaveMode = False
         SaveModeDisabled()
 
@@ -855,7 +884,36 @@ Public Class Form1
     End Sub
 
     Private Sub SaveDataToFile()
-        ' Loop through the array and output each item
+        '------------------------------------------------------------
+        '-                Subprogram  Name: SaveDataToFile          -
+        '------------------------------------------------------------
+        '-                Written By: Justin T. Kruskie             -
+        '-                Written On: January 11, 2023              -
+        '------------------------------------------------------------
+        '- Subprogram Purpose:                                      -
+        '-                                                          -
+        '- Save the data in the inventory array to the file         -
+        '------------------------------------------------------------
+        '- Parameter Dictionary (in parameter order):               -
+        '- (None)                                                   -
+        '------------------------------------------------------------
+        '- Local Variable Dictionary (alphabetically):              -
+        '- (None)                                                   -
+        '------------------------------------------------------------
 
+        Console.WriteLine("CURRENT LENGTH : " & aInventory.Length)
+        ' Append the last element from the aInventory array
+        ' to the file while seperating each attribute with a tab
+        File.AppendAllText("inventory.txt", aInventory(aInventory.Length - 1).strManufacturer & vbTab &
+                           aInventory(aInventory.Length - 1).strForm & vbTab &
+                           aInventory(aInventory.Length - 1).strProcessor & vbTab &
+                           aInventory(aInventory.Length - 1).sngMemoryGB & vbTab &
+                           aInventory(aInventory.Length - 1).dblMemoryBytes & vbTab &
+                           aInventory(aInventory.Length - 1).strVideo & vbTab &
+                           aInventory(aInventory.Length - 1).sngVideoMemoryGB & vbTab &
+                           aInventory(aInventory.Length - 1).dblVideoMemoryBytes & vbTab &
+                           aInventory(aInventory.Length - 1).sngStorageGB & vbTab &
+                           aInventory(aInventory.Length - 1).dblStorageBytes & vbTab &
+                           aInventory(aInventory.Length - 1).blnWireless & vbNewLine)
     End Sub
 End Class
