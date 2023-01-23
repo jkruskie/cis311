@@ -53,6 +53,8 @@ Partial Class frmComputerConfig
         Me.btnPlaceOrder = New System.Windows.Forms.Button()
         Me.grbInternalCamera = New System.Windows.Forms.GroupBox()
         Me.cbInternalCamera = New System.Windows.Forms.CheckBox()
+        Me.lblQuantity = New System.Windows.Forms.Label()
+        Me.txtQuantity = New System.Windows.Forms.TextBox()
         Me.grbFormFactor.SuspendLayout()
         Me.grbVideoCard.SuspendLayout()
         Me.grbMemory.SuspendLayout()
@@ -80,7 +82,7 @@ Partial Class frmComputerConfig
         Me.txtCustomerName.Location = New System.Drawing.Point(104, 11)
         Me.txtCustomerName.Name = "txtCustomerName"
         Me.txtCustomerName.Size = New System.Drawing.Size(214, 20)
-        Me.txtCustomerName.TabIndex = 1
+        Me.txtCustomerName.TabIndex = 0
         '
         'radDesktop
         '
@@ -120,7 +122,7 @@ Partial Class frmComputerConfig
         Me.grbFormFactor.Location = New System.Drawing.Point(13, 43)
         Me.grbFormFactor.Name = "grbFormFactor"
         Me.grbFormFactor.Size = New System.Drawing.Size(625, 46)
-        Me.grbFormFactor.TabIndex = 2
+        Me.grbFormFactor.TabIndex = 1
         Me.grbFormFactor.TabStop = False
         Me.grbFormFactor.Text = "Form Factor"
         '
@@ -131,7 +133,7 @@ Partial Class frmComputerConfig
         Me.grbVideoCard.Location = New System.Drawing.Point(13, 110)
         Me.grbVideoCard.Name = "grbVideoCard"
         Me.grbVideoCard.Size = New System.Drawing.Size(269, 46)
-        Me.grbVideoCard.TabIndex = 4
+        Me.grbVideoCard.TabIndex = 2
         Me.grbVideoCard.TabStop = False
         Me.grbVideoCard.Text = "Video Card"
         '
@@ -165,7 +167,7 @@ Partial Class frmComputerConfig
         Me.grbMemory.Location = New System.Drawing.Point(13, 162)
         Me.grbMemory.Name = "grbMemory"
         Me.grbMemory.Size = New System.Drawing.Size(269, 46)
-        Me.grbMemory.TabIndex = 5
+        Me.grbMemory.TabIndex = 3
         Me.grbMemory.TabStop = False
         Me.grbMemory.Text = "Memory"
         '
@@ -210,7 +212,7 @@ Partial Class frmComputerConfig
         Me.grbStorage.Location = New System.Drawing.Point(13, 214)
         Me.grbStorage.Name = "grbStorage"
         Me.grbStorage.Size = New System.Drawing.Size(269, 46)
-        Me.grbStorage.TabIndex = 6
+        Me.grbStorage.TabIndex = 4
         Me.grbStorage.TabStop = False
         Me.grbStorage.Text = "Storage"
         '
@@ -254,7 +256,7 @@ Partial Class frmComputerConfig
         Me.grbProcessor.Location = New System.Drawing.Point(13, 266)
         Me.grbProcessor.Name = "grbProcessor"
         Me.grbProcessor.Size = New System.Drawing.Size(269, 46)
-        Me.grbProcessor.TabIndex = 7
+        Me.grbProcessor.TabIndex = 5
         Me.grbProcessor.TabStop = False
         Me.grbProcessor.Text = "Processor"
         '
@@ -286,7 +288,7 @@ Partial Class frmComputerConfig
         Me.grbDvdRom.Location = New System.Drawing.Point(13, 319)
         Me.grbDvdRom.Name = "grbDvdRom"
         Me.grbDvdRom.Size = New System.Drawing.Size(119, 48)
-        Me.grbDvdRom.TabIndex = 8
+        Me.grbDvdRom.TabIndex = 6
         Me.grbDvdRom.TabStop = False
         Me.grbDvdRom.Text = "DVD-ROM"
         '
@@ -306,7 +308,7 @@ Partial Class frmComputerConfig
         Me.grbSoundCard.Location = New System.Drawing.Point(163, 319)
         Me.grbSoundCard.Name = "grbSoundCard"
         Me.grbSoundCard.Size = New System.Drawing.Size(119, 48)
-        Me.grbSoundCard.TabIndex = 9
+        Me.grbSoundCard.TabIndex = 7
         Me.grbSoundCard.TabStop = False
         Me.grbSoundCard.Text = "Sound Card"
         '
@@ -326,7 +328,7 @@ Partial Class frmComputerConfig
         Me.grbLiquidCooling.Location = New System.Drawing.Point(13, 373)
         Me.grbLiquidCooling.Name = "grbLiquidCooling"
         Me.grbLiquidCooling.Size = New System.Drawing.Size(119, 48)
-        Me.grbLiquidCooling.TabIndex = 10
+        Me.grbLiquidCooling.TabIndex = 8
         Me.grbLiquidCooling.TabStop = False
         Me.grbLiquidCooling.Text = "Liquid Cooling"
         '
@@ -359,7 +361,7 @@ Partial Class frmComputerConfig
         Me.btnPlaceOrder.Location = New System.Drawing.Point(332, 373)
         Me.btnPlaceOrder.Name = "btnPlaceOrder"
         Me.btnPlaceOrder.Size = New System.Drawing.Size(306, 48)
-        Me.btnPlaceOrder.TabIndex = 12
+        Me.btnPlaceOrder.TabIndex = 11
         Me.btnPlaceOrder.Text = "Place Order"
         Me.btnPlaceOrder.UseVisualStyleBackColor = True
         '
@@ -369,7 +371,7 @@ Partial Class frmComputerConfig
         Me.grbInternalCamera.Location = New System.Drawing.Point(163, 373)
         Me.grbInternalCamera.Name = "grbInternalCamera"
         Me.grbInternalCamera.Size = New System.Drawing.Size(119, 48)
-        Me.grbInternalCamera.TabIndex = 14
+        Me.grbInternalCamera.TabIndex = 9
         Me.grbInternalCamera.TabStop = False
         Me.grbInternalCamera.Text = "Internal Camera"
         '
@@ -383,11 +385,30 @@ Partial Class frmComputerConfig
         Me.cbInternalCamera.Text = "Yes?"
         Me.cbInternalCamera.UseVisualStyleBackColor = True
         '
+        'lblQuantity
+        '
+        Me.lblQuantity.AutoSize = True
+        Me.lblQuantity.Location = New System.Drawing.Point(553, 17)
+        Me.lblQuantity.Name = "lblQuantity"
+        Me.lblQuantity.Size = New System.Drawing.Size(49, 13)
+        Me.lblQuantity.TabIndex = 15
+        Me.lblQuantity.Text = "Quantity:"
+        '
+        'txtQuantity
+        '
+        Me.txtQuantity.Location = New System.Drawing.Point(600, 17)
+        Me.txtQuantity.MaxLength = 3
+        Me.txtQuantity.Name = "txtQuantity"
+        Me.txtQuantity.Size = New System.Drawing.Size(42, 20)
+        Me.txtQuantity.TabIndex = 10
+        '
         'frmComputerConfig
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(654, 450)
+        Me.Controls.Add(Me.txtQuantity)
+        Me.Controls.Add(Me.lblQuantity)
         Me.Controls.Add(Me.grbInternalCamera)
         Me.Controls.Add(Me.btnPlaceOrder)
         Me.Controls.Add(Me.PictureBox1)
@@ -402,7 +423,7 @@ Partial Class frmComputerConfig
         Me.Controls.Add(Me.txtCustomerName)
         Me.Controls.Add(Me.lblCustomerName)
         Me.Name = "frmComputerConfig"
-        Me.Text = "Computer Configurator"
+        Me.Text = "3"
         Me.grbFormFactor.ResumeLayout(False)
         Me.grbFormFactor.PerformLayout()
         Me.grbVideoCard.ResumeLayout(False)
@@ -457,4 +478,6 @@ Partial Class frmComputerConfig
     Friend WithEvents cbLiquidCooling As CheckBox
     Friend WithEvents grbInternalCamera As GroupBox
     Friend WithEvents cbInternalCamera As CheckBox
+    Friend WithEvents lblQuantity As Label
+    Friend WithEvents txtQuantity As TextBox
 End Class

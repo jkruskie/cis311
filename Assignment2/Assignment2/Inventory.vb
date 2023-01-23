@@ -1,6 +1,52 @@
 ﻿Public Class Inventory
-
+    '------------------------------------------------------------
+    '-                File Name : Inventory.vb                  - 
+    '-                Part of Project: Inventory                -
+    '------------------------------------------------------------
+    '-                Written By: Justin T. Kruskie             -
+    '-                Written On: January 23, 2023              -
+    '------------------------------------------------------------
+    '- File Purpose:                                            -
+    '-                                                          -
+    '- This file handles the creation of the Inventory class    -
+    '- and the creation of the inventory array which holds the  -
+    '- inventory items.                                         -
+    '------------------------------------------------------------
+    '- Program Purpose:                                         -
+    '-                                                          -
+    '- The purpose of this program is to handle the creation of -
+    '- a computer order. The user can select between different  -
+    '- options for each part of the computer and the program    -
+    '- will calculate the total price of the computer.          -
+    '------------------------------------------------------------
+    '- Global Variable Dictionary (alphabetically):             -
+    '- (None)                                                   -
+    '------------------------------------------------------------
     Public Function LoadItems()
+        '------------------------------------------------------------
+        '-                Subprogram Name: LoadItems                -
+        '------------------------------------------------------------
+        '-                Written By: Justin T. Kruskie             -
+        '-                Written On: January 18, 2023              -
+        '------------------------------------------------------------
+        '- Subprogram Purpose:                                      -
+        '-                                                          -
+        '- This subprogram handles the loading of the inventory     -
+        '- items and returning them as an array.                    -
+        '------------------------------------------------------------
+        '- Parameter Dictionary (in parameter order):               -
+        '- (None)                                                   -
+        '------------------------------------------------------------
+        '- Local Variable Dictionary (alphabetically):              -
+        '- objInventoryItem - An object of the InventoryItem class  -
+        '- objDesktop - An object of the Desktop class              -
+        '- objNotebook - An object of the Notebook class            -
+        '- objTablet - An object of the Tablet class                -
+        '------------------------------------------------------------
+        '- Returns:                                                 -
+        '- objInventory - An array of the inventory items           -
+        '------------------------------------------------------------
+
 
         ' Console log
         Console.WriteLine("Loading inventory...")
@@ -11,7 +57,10 @@
         ' Create new desktop inventory item
         Dim objDesktop As New InventoryItem
         ' Set the form factor to desktop
-        objDesktop.strFormFactor = "Desktop"
+        objDesktop.objFormFactor = New InventoryItem.FormFactor With {
+            .strType = "Desktop",
+            .intPrice = 100
+        }
         ' Create new graphics array
         objDesktop.arrGraphics = New InventoryItem.Graphics() {New InventoryItem.Graphics With {
             .strType = "nVidia", .intPrice = 250
@@ -62,7 +111,10 @@
         ' Create new notebook inventory item
         Dim objNotebook As New InventoryItem
         ' Set the form factor to notebook
-        objNotebook.strFormFactor = "Notebook"
+        objNotebook.objFormFactor = New InventoryItem.FormFactor With {
+            .strType = "Notebook",
+            .intPrice = 125
+        }
         ' Create new graphics array
         objNotebook.arrGraphics = New InventoryItem.Graphics() {New InventoryItem.Graphics With {
             .strType = "Intel", .intPrice = 50
@@ -109,7 +161,10 @@
         ' Create new tablet form factor
         Dim objTablet As New InventoryItem
         ' Set the form factor to tablet
-        objTablet.strFormFactor = "Tablet"
+        objTablet.objFormFactor = New InventoryItem.FormFactor With {
+            .strType = "Tablet",
+            .intPrice = 75
+        }
         ' Create new graphics array
         objTablet.arrGraphics = Nothing
         ' Create new memory array

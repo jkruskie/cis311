@@ -14,3 +14,4 @@ D:\repos\cs311\Assignment2\Assignment2\obj\Debug\Assignment2.frmComputerConfig.r
 D:\repos\cs311\Assignment2\Assignment2\bin\Debug\Newtonsoft.Json.dll
 D:\repos\cs311\Assignment2\Assignment2\bin\Debug\Newtonsoft.Json.xml
 D:\repos\cs311\Assignment2\Assignment2\obj\Debug\Assignment2.vbproj.CopyComplete
+D:\repos\cs311\Assignment2\Assignment2\obj\Debug\Assignment2.frmInvoice.resources
