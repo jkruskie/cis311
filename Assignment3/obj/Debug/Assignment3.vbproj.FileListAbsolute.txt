@@ -1,0 +1,12 @@
+D:\repos\cs311\Assignment3\bin\Debug\Assignment3.exe.config
+D:\repos\cs311\Assignment3\bin\Debug\Assignment3.exe
+D:\repos\cs311\Assignment3\bin\Debug\Assignment3.pdb
+D:\repos\cs311\Assignment3\bin\Debug\Assignment3.xml
+D:\repos\cs311\Assignment3\obj\Debug\Assignment3.vbproj.AssemblyReference.cache
+D:\repos\cs311\Assignment3\obj\Debug\Assignment3.vbproj.SuggestedBindingRedirects.cache
+D:\repos\cs311\Assignment3\obj\Debug\Assignment3.Resources.resources
+D:\repos\cs311\Assignment3\obj\Debug\Assignment3.vbproj.GenerateResource.cache
+D:\repos\cs311\Assignment3\obj\Debug\Assignment3.vbproj.CoreCompileInputs.cache
+D:\repos\cs311\Assignment3\obj\Debug\Assignment3.exe
+D:\repos\cs311\Assignment3\obj\Debug\Assignment3.xml
+D:\repos\cs311\Assignment3\obj\Debug\Assignment3.pdb
