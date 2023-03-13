@@ -1,0 +1,12 @@
+D:\repos\cs311\Assignment5\bin\Debug\Assignment5.exe.config
+D:\repos\cs311\Assignment5\bin\Debug\Assignment5.exe
+D:\repos\cs311\Assignment5\bin\Debug\Assignment5.pdb
+D:\repos\cs311\Assignment5\bin\Debug\Assignment5.xml
+D:\repos\cs311\Assignment5\obj\Debug\Assignment5.vbproj.AssemblyReference.cache
+D:\repos\cs311\Assignment5\obj\Debug\Assignment5.vbproj.SuggestedBindingRedirects.cache
+D:\repos\cs311\Assignment5\obj\Debug\Assignment5.Resources.resources
+D:\repos\cs311\Assignment5\obj\Debug\Assignment5.vbproj.GenerateResource.cache
+D:\repos\cs311\Assignment5\obj\Debug\Assignment5.vbproj.CoreCompileInputs.cache
+D:\repos\cs311\Assignment5\obj\Debug\Assignment5.exe
+D:\repos\cs311\Assignment5\obj\Debug\Assignment5.xml
+D:\repos\cs311\Assignment5\obj\Debug\Assignment5.pdb
